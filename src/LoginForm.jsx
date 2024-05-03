@@ -29,7 +29,7 @@ function LoginForm() {
         }
       });
       const userData = response.data;
-      //console.log(response.data);
+      console.log(response.data);
       
       if (response.status === 200 || response.status === 204) {
         userData.username = username;
