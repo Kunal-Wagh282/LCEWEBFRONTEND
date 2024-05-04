@@ -167,6 +167,7 @@ sendData(); // Invoke the async function to execute
 useEffect(() => {
   sessionStorage.setItem('nowName', JSON.stringify(selectedProfileName));
 },[])
+
   const calculateAge = (dob) => {
     const dobDate = new Date(dob);
     const today = new Date();
@@ -204,6 +205,7 @@ useEffect(() => {
           p_name: selectedProfileName
         });
         if (response.status === 202) {
+          sessionStorage.setItem('userData', JSON.stringify(response.data));
           setProfiles(response.data["profile"]);
           setSuccessMessage(true);
           setErrorMessage('Username deleted successfully.')
@@ -230,6 +232,8 @@ useEffect(() => {
         p_dob: newChildDOB,
       });
       if (response.status === 201) {
+        
+        sessionStorage.setItem('userData', JSON.stringify(response.data));
         setSelectedProfileName(newChildUsername);
         setSelectedProfileAge(calculateAge(newChildDOB)); 
         setProfiles(response.data["profile"]);
