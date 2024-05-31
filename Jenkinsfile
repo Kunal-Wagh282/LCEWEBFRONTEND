@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Kunal-Wagh282/LCEWEBFRONTEND.git'
+                git 'https://github.com/Kunal-Wagh282/LCEWEBFRONTEND'
             }
         }
         
